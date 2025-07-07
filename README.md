@@ -11,18 +11,18 @@ Con el objetivo de mejorar la gestión de sus clientes, una empresa dedicada a l
 **a. Arquitectura del proyecto:**
 El proyecto sigue una arquitectura en capas bien separadas, lo cual promueve la mantenibilidad y escalabilidad del sistema. Las capas están organizadas en los siguientes proyectos:
 
--**EmpresaVOObjetos**
+- **EmpresaVOObjetos**
 Contiene las clases de entidades (modelos del dominio) y ViewModels.
 También incluye la configuración de AutoMapper (clase `MappingProfile`).
 
--**EmpresaVDAL (Data Access Layer)**
+- **EmpresaVDAL (Data Access Layer)**
 Encargado del acceso a datos mediante Entity Framework Core.
 Incluye el `DbContext` (`EmpresaContext`) y los repositorios.
 
--**EmpresaVBLL (Business Logic Layer)**
+- **EmpresaVBLL (Business Logic Layer)**
 Encapsula la lógica de negocio. Define servicios que usan los repositorios para aplicar reglas o lógica adicional.
 
--**EmpresaVe (Web API)**
+- **EmpresaVe (Web API)**
 Proyecto ASP.NET Core Web API.
 
 **b. Librerías y paquetes Nuget utilizados**
@@ -38,13 +38,13 @@ Los paquetes NuGet utilizados en el proyecto son:
   <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 </ItemGroup>
   ```
--`AutoMapper`: herramienta para mapear objetos automáticamente entre entidades, DTOs y ViewModels.
+- `AutoMapper`: herramienta para mapear objetos automáticamente entre entidades, DTOs y ViewModels.
 
--`Microsoft.EntityFrameworkCore.SqlServer`: para conectarse a SQL Server desde Entity Framework Core.
+- `Microsoft.EntityFrameworkCore.SqlServer`: para conectarse a SQL Server desde Entity Framework Core.
 
--`Microsoft.EntityFrameworkCore.Tools`: herramientas adicionales para manejar migraciones y scaffolding.
+- `Microsoft.EntityFrameworkCore.Tools`: herramientas adicionales para manejar migraciones y scaffolding.
 
--`Swashbuckle.AspNetCore`: para generar documentación Swagger de la API REST.
+- `Swashbuckle.AspNetCore`: para generar documentación Swagger de la API REST.
 
 **c. Link del repositorio**
 https://github.com/Melanivargas24/Practica2_Grupo6.git
