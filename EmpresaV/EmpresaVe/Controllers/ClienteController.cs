@@ -48,5 +48,13 @@ namespace EmpresaV.Controllers
 
             return Ok(actualizado);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var eliminado = await _clienteServicio.EliminarClienteAsync(id);
+            if (!eliminado) return NotFound("Cliente no encontrado");
+            return Ok(new { mensaje = "Cliente eliminado exitosamente" });
+        }
     }
 }
