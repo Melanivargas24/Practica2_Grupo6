@@ -37,5 +37,16 @@ namespace EmpresaV.Controllers
             var nuevo = await _clienteServicio.CrearClienteAsync(cliente);
             return CreatedAtAction(nameof(Get), new { id = nuevo.Id }, nuevo);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] ClienteViewModel cliente)
+        {
+            if (id != cliente.Id) return BadRequest("El id no coincide con el id del clientee");
+
+            var actualizado = await _clienteServicio.ActualizarClienteAsync(cliente);
+            if (actualizado == null) return NotFound("Cliente no encontrado");
+
+            return Ok(actualizado);
+        }
     }
 }
